@@ -7,7 +7,15 @@ import plotly.express as px
 import plotly.graph_objects as go
 import random
 from datetime import datetime, timedelta
+import nltk
 
+# Download required NLTK data
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+st.set_page_config(page_title="Amazon Review Analyzer", page_icon="📊", layout="wide")
 st.set_page_config(page_title="Amazon Review Analyzer", page_icon="📊", layout="wide")
 
 st.title("🛍️ Amazon Product Review Intelligence")
